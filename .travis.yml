@@ -9,9 +9,11 @@ deploy:
     function_name: weather-to-telegram
     region: us-east-1
     role: arn:aws:iam::377159598624:role/aws-lambda-deployer # see https://docs.travis-ci.com/user/deployment/lambda/#AWS-permissions
-    runtime: nodejs12.0
+    runtime: nodejs10.x
     zip: build.zip
     handler_name: handler
     timeout: 30 # seconds
     memory_size: 256 # MB
     skip_cleanup: true
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
