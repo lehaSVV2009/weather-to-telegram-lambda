@@ -2,7 +2,7 @@
 
 [AWS Lambda](https://aws.amazon.com/lambda/) to send [weather](https://wttr.in) to [Telegram](https://telegram.org/) channel via [bot](https://tele.gs/botfather)
 
-[demo](./demo.png)
+![demo](./demo.png)
 
 ## Getting Started
 
