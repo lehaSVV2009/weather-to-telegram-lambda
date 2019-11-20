@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 12
+script:
+  - yarn
+  - yarn build
+deploy:
+  - provider: lambda
+    function_name: weather-to-telegram
+    region: us-east-1
+    role: arn:aws:iam::377159598624:role/aws-lambda-deployer # see https://docs.travis-ci.com/user/deployment/lambda/#AWS-permissions
+    runtime: nodejs12.0
+    zip: build.zip
+    handler_name: handler
+    timeout: 30 # seconds
+    memory_size: 256 # MB
+    skip_cleanup: true
