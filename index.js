@@ -20,7 +20,7 @@ exports.handler = async event => {
 
     const formData = new FormData();
     formData.append("chat_id", process.env.TELEGRAM_CHAT_ID);
-    formData.append("disable_notification", true);
+    formData.append("disable_notification", "true");
     formData.append("photo", fs.createReadStream(TMP_FILE_PATH));
     const formHeaders = formData.getHeaders();
     await axios.post(
